@@ -19,4 +19,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//Creare un modo per gestire le rotte sotto autenticazione
+
+Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin')->group(function(){
+    Route::get('/', 'HomeController@index')->name('index');
+});
+
+//Creare un modo per gestire le rotte che non usano autenticazione
+
 Route::get('/home', 'HomeController@index')->name('home');
