@@ -13,18 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Auth::routes();
 
 //Creare un modo per gestire le rotte sotto autenticazione
 
-Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin')->group(function(){
+Route::middleware('auth')
+    ->namespace('Admin')
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function(){
     Route::get('/', 'HomeController@index')->name('index');
 });
 
 //Creare un modo per gestire le rotte che non usano autenticazione
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+//Route::get('/home', 'HomeController@index')->name('home');
