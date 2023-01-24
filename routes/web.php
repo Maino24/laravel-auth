@@ -20,7 +20,6 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 //Creare un modo per gestire le rotte sotto autenticazione
-
 Route::middleware('auth')
     ->namespace('Admin')
     ->prefix('admin')
@@ -30,7 +29,9 @@ Route::middleware('auth')
 });
 
 //Creare un modo per gestire le rotte che non usano autenticazione
-
+Route::get('{any}', function(){
+    return view('guest.home');
+})->where('any', "*");
 
 
 
