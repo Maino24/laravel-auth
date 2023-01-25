@@ -28,7 +28,7 @@ Route::middleware('auth')
     ->group(function(){
     Route::get('/', 'HomeController@index')->name('index');
     //Aggiungo controller CRUD nella sezione admin
-    Route::resource('/post', PostsController::class);
+    Route::resource('/posts', PostController::class);
 });
 
 //Creare un modo per gestire le rotte che non usano autenticazione
