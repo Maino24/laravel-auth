@@ -29,7 +29,7 @@ Route::middleware('auth')
 });
 
 //Creare un modo per gestire le rotte che non usano autenticazione
-Route::get('{any}', function(){
+Route::get('{any?}', function(){
     return view('guest.home');
 })->where('any', ".*");
 
