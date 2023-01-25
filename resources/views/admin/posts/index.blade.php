@@ -13,6 +13,7 @@
           </tr>
         </thead>
 
+        <a href="{{route('admin.posts.create')}}"> Crea nuovo post</a>
 
         @foreach ($posts as $post)
         <tbody>
@@ -24,7 +25,14 @@
                   </a>
                 </td>
                 <td>{{$post -> description}}</td>
-                <td></td>
+                <td>
+                    <a href="{{route('admin.posts.edit', $post->id)}}">
+                        Edit
+                    </a>
+                    {{--<a href="{{route('admin.posts.delete', $post->id)}}">
+                        Delete
+                    </a>--}}
+                </td>
             </tr>
         </tbody>>
         @endforeach
