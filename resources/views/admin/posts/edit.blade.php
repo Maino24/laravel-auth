@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
     <div class="container text-center">
-        <h1>Modifica nuovo post {{$post->title}}</h1>
+        <h1>Modifica il post: {{$post->title}}</h1>
 
-        <form action="{{route('admin.posts.update'), $post->id}}" method="POST">
+        <form action="{{route('admin.posts.update', $post->id)}}" method="POST">
             @csrf
             @method('PUT')
 
