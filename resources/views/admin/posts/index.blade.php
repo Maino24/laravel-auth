@@ -3,13 +3,13 @@
 @section('content')
     {{--Qui inserisco i post--}}
 
-    <h1>Pagina per i post</h1>
     <table class="table">
         <thead>
           <tr>
             <th scope="col">#id</th>
             <th scope="col">Titolo</th>
             <th scope="col">Descrizione</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
 
@@ -18,8 +18,13 @@
         <tbody>
             <tr>
                 <td>{{$post -> id}}</td>
-                <td>{{$post -> title}}</td>
+                <td>
+                  <a href="{{route('admin.posts.show', $post->id)}}">
+                    {{$post -> title}}
+                  </a>
+                </td>
                 <td>{{$post -> description}}</td>
+                <td></td>
             </tr>
         </tbody>>
         @endforeach
